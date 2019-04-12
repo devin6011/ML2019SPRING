@@ -11,7 +11,7 @@ from keras.preprocessing.image import ImageDataGenerator
 from keras.callbacks import ModelCheckpoint, ReduceLROnPlateau, EarlyStopping
 
 print('Loading data...')
-trainData = pd.read_csv('train.csv', skiprows=[0], header=None)
+trainData = pd.read_csv(sys.argv[1], skiprows=[0], header=None)
 X_train = pd.read_csv(io.StringIO(trainData.iloc[:, 1].to_csv(header=False, index=False)), sep='\s+', header=None).to_numpy(dtype=float)
 y_train = trainData.iloc[:, 0].to_numpy(dtype=float)
 print('Loading data done')
