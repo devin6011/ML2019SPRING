@@ -133,7 +133,7 @@ embedding_dim = 300
 hidden_dim = 64
 n_layers = 2
 net = RNN(vocab_size, seq_len, embedding_dim, hidden_dim, n_layers)
-net.load_state_dict(torch.load('1.pkl'))
+net.load_state_dict(torch.load('1.pkl', map_location='cpu'))
 
 print(net)
 
@@ -232,7 +232,7 @@ embedding_dim = 300
 hidden_dim = 64
 n_layers = 2
 net = RNN(vocab_size, seq_len, embedding_dim, hidden_dim, n_layers)
-net.load_state_dict(torch.load('2.pkl'))
+net.load_state_dict(torch.load('2.pkl', map_location='cpu'))
 
 print(net)
 
@@ -352,7 +352,7 @@ class RNN(nn.Module):
         return h
 
 net = RNN(seq_len, embedding_dim, hidden_dim, n_layers)
-net.load_state_dict(torch.load(codename + '.pkl'))
+net.load_state_dict(torch.load(codename + '.pkl', map_location='cpu'))
 
 print(net)
 
@@ -466,7 +466,7 @@ class RNN(nn.Module):
         return h
 
 net = RNN(seq_len, embedding_dim, hidden_dim, n_layers)
-net.load_state_dict(torch.load(codename + '.pkl'))
+net.load_state_dict(torch.load(codename + '.pkl', map_location='cpu'))
 
 print(net)
 
@@ -588,7 +588,7 @@ class RNN(nn.Module):
         return h
 
 net = RNN(seq_len, embedding_dim, hidden_dim, n_layers)
-net.load_state_dict(torch.load(codename + '.pkl'))
+net.load_state_dict(torch.load(codename + '.pkl', map_location='cpu'))
 
 print(net)
 
