@@ -23,7 +23,7 @@ print('Preprocessing done')
 print('Loading models...')
 
 model = models.Model1()
-with np.load('model.npz') as weightFile:
+with np.load('model.npz', allow_pickle=True) as weightFile:
     weights = weightFile['arr_0']
 weights = [x.astype(np.float32) for x in weights]
 model.set_weights(weights)
